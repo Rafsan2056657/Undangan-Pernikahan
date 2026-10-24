@@ -1,255 +1,79 @@
-:root {
-    --navy: #4f8edc;
-    --bg: #0f0f0f;
-    --shadow: 0 2px 2px rgb(0 0 0 / 50%);
-}
+const openButton = document.getElementById("openInvitation");
+const navbar = document.getElementById("mainNavbar");
+const content = document.getElementById("invitationContent");
+const audioContainer = document.getElementById("audio-container");
+const song = document.getElementById("song");
+const audioToggle = document.getElementById("audioToggle");
+const audioIcon = document.getElementById("audioIcon");
+const form = document.getElementById("my-form");
 
-* { box-sizing: border-box; }
+const weddingDate = new Date("2027-06-06T08:00:00+07:00").getTime();
 
-html {
-    font-size: 100%;
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px;
-}
+function updateCountdown() {
+    const remaining = Math.max(0, weddingDate - Date.now());
 
-body {
-    width: 100%;
-    min-height: 100vh;
-    margin: 0;
-    font: 1.2rem "Work Sans", sans-serif;
-}
+    const values = {
+        days: Math.floor(remaining / 86400000),
+        hours: Math.floor((remaining % 86400000) / 3600000),
+        minutes: Math.floor((remaining % 3600000) / 60000),
+        seconds: Math.floor((remaining % 60000) / 1000)
+    };
 
-body.locked { overflow: hidden; }
-
-[hidden] { display: none !important; }
-
-.cover {
-    position: relative;
-    isolation: isolate;
-    min-height: 100vh;
-    min-height: 100dvh;
-    padding: 24px;
-    overflow: hidden;
-}
-
-.cover::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: url("img/bg-wedding.jpg") center/cover no-repeat;
-    filter: grayscale(100%);
-    z-index: -1;
-}
-
-.cover h1 { font: 6rem "Sacramento", cursive; }
-
-.cover h1, .cover h4, .cover p {
-    text-shadow: var(--shadow);
-}
-
-.cover h4 { font-size: 1.6rem; }
-.cover p { font-size: 1.4rem; }
-
-.cover .btn {
-    color: var(--navy);
-    background: white;
-    box-shadow: var(--shadow);
-}
-
-.cover .btn:hover {
-    color: white;
-    background: var(--navy);
-}
-
-.countdown {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin: 25px 0;
-}
-
-.countdown-item {
-    min-width: 75px;
-    padding: 12px 8px;
-    background: var(--bg);
-    border: 1px solid var(--navy);
-    border-radius: 8px;
-    color: var(--navy);
-    text-align: center;
-}
-
-.countdown-item span {
-    display: block;
-    font-size: 1.6rem;
-    font-weight: 700;
-}
-
-.countdown-item small {
-    color: white;
-    font-size: 0.75rem;
-}
-
-.mynavbar {
-    background: rgba(255, 255, 255, 0.3) !important;
-    backdrop-filter: blur(4px);
-}
-
-.mynavbar .navbar-brand,
-.mynavbar .offcanvas-title {
-    font: bold 3.2rem "Sacramento", cursive;
-}
-
-.mynavbar .nav-link { text-transform: uppercase; }
-.mynavbar .offcanvas { height: 100vh; height: 100dvh; }
-
-.Home {
-    background: url("img/bg-2.png") center/cover no-repeat;
-    min-height: 100vh;
-    padding: 9rem 0 5rem;
-}
-
-.Home h2, .Info h2 {
-    color: var(--navy);
-    font: bold 5rem "Sacramento", cursive;
-}
-
-.Home h3 {
-    color: #444;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.Home p { color: #666; }
-.Home .couple { margin-top: 100px; }
-
-.Home .couple h3 {
-    color: var(--navy);
-    font: 2.4rem "Sacramento", cursive;
-}
-
-.Home .couple img {
-    width: 100%;
-    height: auto;
-}
-
-.Info {
-    padding: 10rem 0 8rem;
-    color: white;
-    background: var(--bg);
-}
-
-.Info .alamat, .Info .description { font-size: 1.1rem; }
-
-.Info .card {
-    color: white;
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid #999;
-}
-
-.Info .card-header {
-    border-bottom: 1px solid #999;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-}
-
-.Info .card-body { font-size: 1rem; }
-
-.Info .card-footer {
-    border-top: 1px solid #999;
-    font-size: 0.9rem;
-}
-
-.RsVp {
-    padding: 10rem 0 8rem;
-    background: var(--navy);
-}
-
-.RsVp h2 {
-    color: var(--bg);
-    font: bold 4rem "Sacramento", cursive;
-}
-
-.RsVp p, .RsVp label { color: white; }
-
-.RsVp button {
-    color: var(--navy);
-    background: var(--bg);
-    border: 1px solid var(--bg);
-}
-
-.RsVp button:hover {
-    color: var(--navy);
-    background: white;
-    border-color: white;
-}
-
-.footer {
-    padding: 3rem;
-    color: var(--navy);
-    background: var(--bg);
-    text-align: center;
-}
-
-.footer a {
-    color: var(--navy);
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.audio-toggle {
-    position: fixed;
-    right: 24px;
-    bottom: 24px;
-    z-index: 1040;
-    width: 48px;
-    height: 48px;
-    border: 1px solid var(--navy);
-    border-radius: 50%;
-    background: var(--bg);
-    color: white;
-    font-size: 1.8rem;
-    cursor: pointer;
-}
-
-@media (max-width: 991.98px) {
-    html { font-size: 75%; }
-}
-
-@media (max-width: 767.98px) {
-    html { font-size: 65%; }
-
-    .mynavbar .nav-link {
-        font-size: 2rem;
-        text-align: center;
+    for (const id in values) {
+        document.getElementById(id).textContent =
+            String(values[id]).padStart(2, "0");
     }
 }
 
-@media (max-width: 575.98px) {
-    html { font-size: 60%; }
+updateCountdown();
+setInterval(updateCountdown, 1000);
 
-    .cover h1 { font-size: 4.5rem; }
-    .countdown {
-        gap: 7px;
-        flex-wrap: nowrap;
+openButton.addEventListener("click", async function() {
+    document.body.classList.remove("locked");
+    content.hidden = false;
+    navbar.hidden = false;
+    audioContainer.hidden = false;
+    openButton.disabled = true;
+
+    document.getElementById("Home").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+    try {
+        await song.play();
+        audioToggle.setAttribute("aria-label", "Jeda musik");
+    } catch (error) {
+        audioToggle.setAttribute("aria-label", "Putar musik");
     }
 
-    .countdown-item {
-        flex: 1;
-        min-width: 0;
-        padding: 10px 3px;
+    audioIcon.className = "bi bi-disc";
+});
+
+audioToggle.addEventListener("click", async function() {
+    if (song.paused) {
+        try {
+            await song.play();
+            audioToggle.setAttribute("aria-label", "Jeda musik");
+        } catch (error) {
+            audioToggle.setAttribute("aria-label", "Putar musik");
+        }
+    } else {
+        song.pause();
+        audioToggle.setAttribute("aria-label", "Putar musik");
     }
 
-    .countdown-item span { font-size: 1.4rem; }
-    .mynavbar .navbar-brand { font-size: 2.8rem; }
+    audioIcon.className = "bi bi-disc";
+});
 
-    .Home { padding-top: 7rem; }
-    .Home h2, .Info h2 { font-size: 4rem; }
-    .Home .couple { margin-top: 45px; }
-    .Info, .RsVp { padding: 7rem 0 6rem; }
-    .footer { padding: 2rem 1rem; }
-    .audio-toggle {
-        right: 16px;
-        bottom: 16px;
-    }
-}
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    fetch(form.action, {
+        method: "POST",
+        body: new FormData(form)
+    }).then(() => {
+        alert("Konfirmasi kehadiran berhasil terkirim!");
+        form.reset();
+    });
+});
