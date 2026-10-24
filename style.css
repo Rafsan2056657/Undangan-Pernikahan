@@ -1,13 +1,11 @@
-
 :root {
     --navy: #4f8edc;
     --bg: #0f0f0f;
-    --shadow: 0 2px 2px rgb(0 0 0 / 0.5);
+    --shadow: 0 2px 2px rgb(0 0 0/ 0.5)
 }
 
 html {
     font-size: 100%;
-    overflow-x: hidden;
 }
 
 body {
@@ -16,7 +14,6 @@ body {
     margin: 0;
     font-size: 1.2rem;
     font-family: "Work Sans", sans-serif;
-    overflow-x: hidden;
 }
 
 .cover::before {
@@ -25,7 +22,7 @@ body {
     inset: 0;
     background-image: url("img/bg-wedding.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: center ;
     filter: grayscale();
     z-index: -1;
 }
@@ -33,12 +30,9 @@ body {
 .cover {
     position: relative;
     min-height: 100vh;
-    min-height: 100dvh;
 }
 
-.cover h1,
-.cover h4,
-.cover p {
+.cover h1, .cover h4, .cover p {
     text-shadow: var(--shadow);
 }
 
@@ -55,6 +49,7 @@ body {
     font-size: 1.4rem;
 }
 
+
 .countdown {
     display: flex;
     justify-content: center;
@@ -62,7 +57,6 @@ body {
     flex-wrap: wrap;
     margin: 25px 0;
 }
-
 .countdown-item {
     min-width: 75px;
     padding: 12px 8px;
@@ -73,14 +67,12 @@ body {
     text-align: center;
     backdrop-filter: blur(4px);
 }
-
 .countdown-item span {
     display: block;
     font-size: 1.6rem;
     font-weight: 700;
     line-height: 1.4;
 }
-
 .countdown-item small {
     color: #fff;
     font-size: 0.75rem;
@@ -91,35 +83,19 @@ body {
     background-color: white;
     box-shadow: var(--shadow);
 }
-
 .cover a:hover {
     background-color: var(--navy);
     color: white;
 }
 
 .mynavbar {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
     background-color: rgba(255, 255, 255, 0.3) !important;
     backdrop-filter: blur(4px);
-    z-index: 1030;
 }
-
-.mynavbar.show {
-    display: block;
-}
-
-.mynavbar .offcanvas {
+.mynavbar .offcanvas{
     height: 100vh;
-    height: 100dvh;
 }
-
-.mynavbar .navbar-brand,
-.mynavbar .offcanvas-title {
+.mynavbar .navbar-brand, .mynavbar .offcanvas-title{
     font-family: "Sacramento", cursive;
     font-size: 3.2rem;
     font-weight: bold;
@@ -130,80 +106,66 @@ body {
 }
 
 .Home {
-    background-image: url("img/bg-2.png");
+    background-image: url(img/bg-2.png);
     background-size: cover;
     min-height: 100vh;
     margin-top: -6rem;
     padding-top: 15rem;
     padding-bottom: 5rem;
 }
-
-.Home h2,
-.Info h2 {
+.Home h2, .Info h2 {
     color: var(--navy);
-    font-family: "Sacramento", cursive;
+    font-family: "Sacramento";
     font-size: 5rem;
     font-weight: bold;
 }
-
 .Home h3 {
     color: #444;
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
-
 .Home p {
     color: #666;
     font-size: 1.2rem;
 }
-
 .Home .couple {
     margin-top: 100px;
-}
 
+}
 .Home .couple h3 {
-    font-family: "Sacramento", cursive;
+    font-family: "Sacramento";
     font-size: 2.4rem;
     color: var(--navy);
 }
-
 .Home .couple img {
     width: 100%;
-    height: auto;
 }
-
 .Info {
     background-color: var(--bg);
     color: white;
     padding-top: 10rem;
     padding-bottom: 8rem;
 }
-
 .Info .alamat {
     font-size: 1.1rem;
 }
-
 .Info .description {
     font-size: 1.1rem;
     font-weight: 300;
 }
-
 .Info .card {
     background-color: rgba(255, 255, 255, 0.2) !important;
     color: white !important;
     border: 1px solid #999;
 }
-
 .Info .card-header {
     border-bottom: 1px solid #999;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
 }
-
 .Info .card-body {
     font-size: 1rem;
 }
-
 .Info .card-footer {
     font-size: 0.9rem;
     border-top: 1px solid #999;
@@ -215,7 +177,6 @@ body {
     padding-top: 10rem;
     padding-bottom: 8rem;
 }
-
 .RsVp p {
     color: white;
     font-size: 1rem;
@@ -224,39 +185,33 @@ body {
 
 .RsVp h2 {
     color: var(--bg);
-    font-family: "Sacramento", cursive;
+    font-family: "Sacramento";
     font-size: 4rem;
     font-weight: bold;
 }
-
 .RsVp form label {
     color: white;
 }
-
 .RsVp button {
     background-color: var(--bg);
     color: var(--navy);
     border: 1px solid var(--bg);
 }
-
 .RsVp button:hover {
     background-color: white;
     color: var(--navy);
     border: 1px solid white;
 }
-
 .footer {
     padding: 3rem;
     background-color: var(--bg);
     color: var(--navy);
 }
-
-.footer a {
+.footer a{
     color: var(--navy);
     font-weight: bold;
     text-decoration: none;
 }
-
 .audio-icon-wrapper {
     width: 4rem;
     height: 4rem;
@@ -264,7 +219,6 @@ body {
     position: fixed;
     bottom: 2.5rem;
     right: 2rem;
-    z-index: 1040;
     cursor: pointer;
     color: white;
     opacity: 0.5;
@@ -276,22 +230,23 @@ body {
     align-items: center;
     line-height: 0;
 }
-
 @keyframes rotating {
-    from {
+    from{
         transform: rotate(0);
     }
     to {
         transform: rotate(360deg);
     }
+    
 }
 
+/* Laptop */
 @media (max-width: 991.98px) {
     html {
         font-size: 75%;
     }
 }
-
+/* Tablet */
 @media (max-width: 767.98px) {
     html {
         font-size: 65%;
@@ -302,19 +257,10 @@ body {
         text-align: center;
     }
 }
-
+/* Handphone */
 @media (max-width: 575.98px) {
     html {
         font-size: 60%;
-    }
-
-    .cover {
-        min-height: 100vh;
-        min-height: 100dvh;
-    }
-
-    .cover h1 {
-        font-size: 4.5rem;
     }
 
     .countdown {
@@ -338,51 +284,7 @@ body {
         font-size: 0.75rem;
     }
 
-    .mynavbar .navbar-brand {
-        font-size: 2.8rem;
-    }
-
     .mynavbar .nav-link {
         text-align: center;
-    }
-
-    .Home {
-        padding-top: 15rem;
-        padding-bottom: 4rem;
-    }
-
-    .Home h2,
-    .Info h2 {
-        font-size: 4rem;
-    }
-
-    .Home .couple {
-        margin-top: 45px;
-    }
-
-    .Home .couple h3 {
-        font-size: 2.6rem;
-    }
-
-    .Home .couple img {
-        max-width: 100%;
-    }
-
-    .Info,
-    .RsVp {
-        padding-top: 7rem;
-        padding-bottom: 6rem;
-    }
-
-    .footer {
-        padding: 2rem 1rem;
-    }
-
-    .audio-icon-wrapper {
-        width: 3.5rem;
-        height: 3.5rem;
-        font-size: 3.5rem;
-        right: 1.5rem;
-        bottom: 1.5rem;
     }
 }
