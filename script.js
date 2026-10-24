@@ -54,11 +54,14 @@ function disableScroll() {
     };
 
     rootElement.style.scrollBehavior = "auto";
+    document.body.style.overflow = "hidden";
 }
 
 function enableScroll() {
     window.onscroll = null;
+    document.body.style.overflow = "auto";
     rootElement.style.scrollBehavior = "smooth";
+
     playAudio();
 }
 
