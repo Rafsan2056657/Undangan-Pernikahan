@@ -3,22 +3,9 @@
     --bg: #0f0f0f;
     --shadow: 0 2px 2px rgb(0 0 0 / 0.5);
 }
-
-html {
-    width: 100%;
-    font-size: 100%;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
-
 body {
-    width: 100%;
-    max-width: 100%;
-    min-height: 100vh;
-    margin: 0;
     font-size: 1.2rem;
     font-family: "Work Sans", sans-serif;
-    overflow-x: hidden;
 }
 
 .cover::before {
@@ -48,7 +35,15 @@ body {
 .cover p {
     font-size: 1.4rem;
 }
-
+.cover a {
+    color: var(--navy);
+    background-color: white;
+    box-shadow: var(--shadow);
+}
+.cover a:hover {
+    background-color: var(--navy);
+    color: white;
+}
 .countdown {
     display: flex;
     justify-content: center;
@@ -68,26 +63,17 @@ body {
 }
 .countdown-item span {
     display: block;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 700;
     line-height: 1.4;
 }
-
 .countdown-item small {
     color: #fff;
     font-size: 0.75rem;
 }
-.cover a {
-    color: var(--navy);
-    background-color: white;
-    box-shadow: var(--shadow);
-}
-.cover a:hover {
-    background-color: var(--navy);
-    color: white;
-}
 
 .mynavbar {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -102,7 +88,7 @@ body {
 }
 .mynavbar .navbar-brand, .mynavbar .offcanvas-title {
     font-family: "Sacramento", cursive;
-    font-size: 3.2rem;
+    font-size: 3rem;
     font-weight: bold;
 }
 .mynavbar .nav-link {
@@ -267,47 +253,16 @@ body {
     html {
         font-size: 60%;
     }
-    .cover h1 {
-        font-size: 4.5rem;
-    }
-    .cover h4 {
-        font-size: 1.5rem;
-    }
-    .cover p {
-        font-size: 1.2rem;
-    }
-    .Home {
-        padding: 12rem 1.5rem 5rem;
-    }
-    .Home h2, .Info h2 {
-        font-size: 4rem;
-    }
-    .Home .couple {
-        margin-top: 50px;
-    }
-    .Home .couple img {
-        display: block;
-        width: 80%;
-        max-width: 250px;
-        margin: 0 auto;
-    }
     .countdown {
         gap: 7px;
         margin: 18px 0;
         flex-wrap: nowrap;
     }
-
     .countdown-item {
         flex: 1;
         min-width: 0;
         padding: 10px 3px;
         margin: 0;
-    }
-    .countdown-item span {
-        font-size: 1.4rem;
-    }
-    .countdown-item small {
-        font-size: 0.75rem;
     }
     .mynavbar .navbar-brand {
         font-size: 2.5rem;
@@ -316,17 +271,6 @@ body {
         margin-right: 0.5rem;
     }
     .mynavbar .nav-link {
-        text-align: center;
-    }
-    .audio-icon-wrapper {
-        right: 1rem;
-        bottom: 1rem;
-    }
-    .RsVp h2 {
-        font-size: 3.5rem;
-    }
-    .footer {
-        padding: 2rem 1rem;
         text-align: center;
     }
 }
