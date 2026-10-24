@@ -8,6 +8,7 @@ html {
     width: 100%;
     font-size: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -36,9 +37,7 @@ body {
     min-height: 100vh;
 }
 
-.cover h1,
-.cover h4,
-.cover p {
+.cover h1, .cover h4, .cover p {
     text-shadow: var(--shadow);
 }
 
@@ -98,6 +97,9 @@ body {
 }
 
 .mynavbar {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
     width: 100%;
     max-width: 100%;
     background-color: rgba(255, 255, 255, 0.3) !important;
@@ -108,8 +110,7 @@ body {
     height: 100vh;
 }
 
-.mynavbar .navbar-brand,
-.mynavbar .offcanvas-title {
+.mynavbar .navbar-brand, .mynavbar .offcanvas-title {
     font-family: "Sacramento", cursive;
     font-size: 3.2rem;
     font-weight: bold;
@@ -129,11 +130,10 @@ body {
     margin-top: -6rem;
     padding-top: 15rem;
     padding-bottom: 5rem;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
-.Home h2,
-.Info h2 {
+.Home h2, .Info h2 {
     color: var(--navy);
     font-family: "Sacramento", cursive;
     font-size: 5rem;
@@ -172,7 +172,7 @@ body {
     color: white;
     padding-top: 10rem;
     padding-bottom: 8rem;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 .Info .alamat {
@@ -212,7 +212,7 @@ body {
     background-color: var(--navy);
     padding-top: 10rem;
     padding-bottom: 8rem;
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 .RsVp p {
@@ -248,6 +248,7 @@ body {
     padding: 3rem;
     background-color: var(--bg);
     color: var(--navy);
+    overflow-wrap: anywhere;
 }
 
 .footer a {
@@ -263,6 +264,7 @@ body {
     position: fixed;
     bottom: 2.5rem;
     right: 2rem;
+    z-index: 1040;
     cursor: pointer;
     color: white;
     opacity: 0.5;
@@ -274,14 +276,14 @@ body {
     line-height: 0;
 }
 
-/* Media Query Laptop */
+/* Laptop */
 @media (max-width: 991.98px) {
     html {
         font-size: 75%;
     }
 }
 
-/* Media Query Tablet */
+/*Tablet */
 @media (max-width: 767.98px) {
     html {
         font-size: 65%;
@@ -293,15 +295,31 @@ body {
     }
 }
 
-/* Media Query Handphone */
+/* Handphone */
 @media (max-width: 575.98px) {
     html {
         font-size: 60%;
     }
 
+    .cover h1 {
+        font-size: 4.5rem;
+    }
+
+    .cover h4 {
+        font-size: 1.5rem;
+    }
+
+    .cover p {
+        font-size: 1.2rem;
+    }
+
     .Home {
-        margin-top: -6rem;
         padding: 12rem 1.5rem 5rem;
+    }
+
+    .Home h2,
+    .Info h2 {
+        font-size: 4rem;
     }
 
     .Home .couple {
@@ -336,15 +354,6 @@ body {
         font-size: 0.75rem;
     }
 
-    .mynavbar {
-        width: 100%;
-    }
-
-    .mynavbar .container {
-        width: 100%;
-        max-width: 100%;
-    }
-
     .mynavbar .navbar-brand {
         font-size: 2.5rem;
     }
@@ -360,5 +369,14 @@ body {
     .audio-icon-wrapper {
         right: 1rem;
         bottom: 1rem;
+    }
+
+    .RsVp h2 {
+        font-size: 3.5rem;
+    }
+
+    .footer {
+        padding: 2rem 1rem;
+        text-align: center;
     }
 }
