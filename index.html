@@ -1,192 +1,225 @@
 <!doctype html>
-<html lang="id">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Wedding Invitation</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"/>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="locked">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
 
-<section id="cover" class="cover text-center text-white d-flex justify-content-center align-items-center">
-    <div>
+    <link rel="stylesheet" href="style.css" />
+
+  </head>
+  <body>
+    <section id="cover" class="cover w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
+      <div>
         <h4>Kepada Bapak/Ibu/Saudara/i</h4>
-        <h1>Ma Dong Seok &amp; Go Youn Jung</h1>
+        <h1>Ma Dong Seok & Go Youn Jung</h1>
         <p>Akan melangsungkan resepsi pernikahan dalam</p>
 
-        <div class="countdown">
-            <div class="countdown-item"><span id="days">00</span><small>Hari</small></div>
-            <div class="countdown-item"><span id="hours">00</span><small>Jam</small></div>
-            <div class="countdown-item"><span id="minutes">00</span><small>Menit</small></div>
-            <div class="countdown-item"><span id="seconds">00</span><small>Detik</small></div>
-        </div>
+        <div class="countdown"> <div class="countdown-item"> <span id="days">00</span> <small>Hari</small> </div>
+        <div class="countdown-item"><span id="hours">00</span> <small>Jam</small></div>
+        <div class="countdown-item"><span id="minutes">00</span><small>Menit</small></div>
+        <div class="countdown-item"><span id="seconds">00</span><small>Detik</small></div> 
+      </div>
+        <a href="#Home" class="btn btn-lg mt-4" onclick="enableScroll()">Lihat Undangan</a>
+      </div>
+    </section>
 
-        <button id="openInvitation" class="btn btn-lg mt-4" type="button"> Lihat Undangan </button>
+<nav class="navbar navbar-expand-md bg-transparan sticky-top mynavbar">
+  <div class="container">
+    <a class="navbar-brand" href="#">Wedding Invitation</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Wedding Invitation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="#Home">Home</a>
+        <a class="nav-link" href="#Info">Info</a>
+        <a class="nav-link" href="#RsVp">RsVp</a>
+      </div>
+      </div>
     </div>
-</section>
-
-<nav class="navbar navbar-expand-md sticky-top mynavbar" id="mainNavbar" hidden>
-    <div class="container">
-        <a class="navbar-brand" href="#Home">Wedding Invitation</a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNavbar" aria-label="Buka menu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title">Wedding Invitation</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Tutup"></button>
-            </div>
-            <div class="offcanvas-body">
-                <div class="navbar-nav ms-auto">
-                    <a class="nav-link" href="#Home">Home</a>
-                    <a class="nav-link" href="#Info">Info</a>
-                    <a class="nav-link" href="#RsVp">RSVP</a>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
 </nav>
 
-<main id="invitationContent" hidden>
-    <section id="Home" class="Home">
-        <div class="container">
+<section id="Home" class="Home">
+  <div class="container">
+     <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <h2>Acara Pernikahan</h2>
+        <h3>Di Selenggarakan pada 2027 di Paris</h3>
+        <p>Oleh karena itu, dengan segala hormat, kami bermaksud untuk mengundang Bapak/Ibu/Saudara/i, Untuk hadir pada acara pernikahan kami.</p>
+      </div>
+    </div>
+
+    
+<div class="row couple align-items-center">
+    <div class="col-lg-6">
+        <div class="row align-items-center">
+            <div class="col-8 text-end">
+                <h3>Ma Dong Seok</h3>
+                <p>Merupakan seorang aktor yang berasal dari negara Korea</p>
+                <p>Putra dari Bpk. Amir<br>dan<br>Ibu. Sinta</p>
+            </div>
+            <div class="col-4">
+                <img src="img/madongseok.png" alt="Ma Dong Seok" class="img-fluid rounded-circle">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="row align-items-center">
+            <div class="col-4">
+                <img src="img/goyounjung.png" alt="Go Youn Jung" class="img-fluid rounded-circle">
+            </div>
+            <div class="col-8">
+                <h3>Go Youn Jung</h3>
+                <p>Merupakan seorang aktor yang berasal dari negara Korea</p>
+                <p>Putri dari Bpk. Umar<br>dan<br>Ibu. Dewi</p>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<section id="Info" class="Info">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-10 text-center">
+        <h2>Informasi Acara</h2>
+        <p class="alamat">Alamat : Gedung Greg Finck,<br> 8 Rue de Chantilly, 75009 Paris, Prancis </p>
+        <a href="https://maps.app.goo.gl/RD2dPBBPsfJ3Bsof8" target="_blank" class="btn btn-light btn-sm my-3"> Klik Untuk menemukan alamat</a>
+        <p class="description">Diharapkan untuk tidak salah tanggal dan alamat. manakala tiba di tujuan namun tidak ada tanda-tanda sedang dilangsugkannya acara pernikahan, boleh jadi anda salah alamat, atau salah tempat</p>
+
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-5 col-10">
+        <div class="card text-center text-bg-light mb-4">
+          <div class="card-header">Akad Nikah</div>
+          <div class="card-body">
             <div class="row justify-content-center">
-                <div class="col-md-8 text-center">
-                    <h2>Acara Pernikahan</h2>
-                    <h3>Diselenggarakan pada 2027 di Paris</h3>
-                    <p>Dengan segala hormat, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir pada acara pernikahan kami.</p>
-                </div>
+              <div class="col-md-6">
+                <i class="bi bi-clock d-block"></i>
+                <span>08:00 - 10:00</span>
+              </div>
+              <div class="col-md-6">
+                <i class="bi bi-calendar d-block"></i>
+                <span>Sabtu, 06 Juni 2027</span>
+              </div>
             </div>
-
-            <div class="row couple align-items-center">
-                <div class="col-lg-6">
-                    <div class="row align-items-center">
-                        <div class="col-8 text-end">
-                            <h3>Ma Dong Seok</h3>
-                            <p>Merupakan seorang aktor yang berasal dari negara Korea.</p>
-                            <p>Putra dari Bpk. Amir<br>dan<br>Ibu Sinta</p>
-                        </div>
-                        <div class="col-4">
-                            <img src="img/madongseok.png" alt="Ma Dong Seok" class="img-fluid rounded-circle">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row align-items-center">
-                        <div class="col-4">
-                            <img src="img/goyounjung.png" alt="Go Youn Jung" class="img-fluid rounded-circle">
-                        </div>
-                        <div class="col-8">
-                            <h3>Go Youn Jung</h3>
-                            <p>Merupakan seorang aktor yang berasal dari negara Korea.</p>
-                            <p>Putri dari Bpk. Umar<br>dan<br>Ibu Dewi</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
+          <div class="card-footer">
+            Saat acara akad di harapkan khidmat demi menjaga kekhidmatan dalam proses acara.
+          </div>
         </div>
-    </section>
-
-    <section id="Info" class="Info">
-        <div class="container">
+      </div>
+      <div class="col-md-5 col-10">
+        <div class="card text-center text-bg-light">
+          <div class="card-header">Resepsi</div>
+          <div class="card-body">
             <div class="row justify-content-center">
-                <div class="col-md-8 col-10 text-center">
-                    <h2>Informasi Acara</h2>
-                    <p class="alamat">Alamat: Gedung Greg Finck,<br>8 Rue de Chantilly, 75009 Paris, Prancis</p>
-                    <a href="https://maps.app.goo.gl/RD2dPBBPsfJ3Bsof8" target="_blank" rel="noopener" class="btn btn-light btn-sm my-3">
-                        Klik untuk menemukan alamat
-                    </a>
-                    <p class="description">Pastikan tanggal dan alamat sudah benar sebelum berangkat ke lokasi acara.</p>
-                </div>
+              <div class="col-md-6">
+                <i class="bi bi-clock d-block"></i>
+                <span>08:00 - 10:00</span>
+              </div>
+              <div class="col-md-6">
+                <i class="bi bi-calendar d-block"></i>
+                <span>Minggu, 07 Juni 2027</span>
+              </div>
             </div>
-
-            <div class="row justify-content-center mt-4">
-                <div class="col-md-5 col-10">
-                    <div class="card text-center mb-4">
-                        <div class="card-header">Akad Nikah</div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6"><i class="bi bi-clock d-block"></i>08:00–10:00</div>
-                                <div class="col-md-6"><i class="bi bi-calendar d-block"></i>Sabtu, 06 Juni 2027</div>
-                            </div>
-                        </div>
-                        <div class="card-footer">Mohon menjaga kekhidmatan selama akad berlangsung.</div>
-                    </div>
-                </div>
-                <div class="col-md-5 col-10">
-                    <div class="card text-center">
-                        <div class="card-header">Resepsi</div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-6"><i class="bi bi-clock d-block"></i>08:00–10:00</div>
-                                <div class="col-md-6"><i class="bi bi-calendar d-block"></i>Minggu, 07 Juni 2027</div>
-                            </div>
-                        </div>
-                        <div class="card-footer">Terima kasih atas perhatian dan kehadiran Anda.</div>
-                    </div>
-                </div>
-            </div>
+          </div>
+          <div class="card-footer">
+            Terima kasih kami ucapkan atas perhatian dan kehadirannya Bapak/Ibu/Saudara/i.
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="RsVp" class="RsVp">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8 col-10 text-center">
-                    <h2>Konfirmasi Kehadiran</h2>
-                    <p>Isi formulir di bawah ini untuk melakukan konfirmasi kehadiran.</p>
-                </div>
-            </div>
+<section id="RsVp" class="RsVp">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-10 text-center">
+        <h2>Konfirmasi Kehadiran</h2>
+        <p>Isi form di bawah ini untuk melakukan konfirmasi Kehadiran.</p>
+      </div>
+    </div>
 
-            <form id="my-form" class="row row-cols-md-auto g-3 align-items-center justify-content-center"
-                method="POST" action="https://script.google.com/macros/s/AKfycbzCqBSJghKaGXZUSs6gY8smr8hhwLFF8f3DR1Z3xmmLNmmmK79KKVnNNHic8lJxdtkwLg/exec">
-                <div class="col-12">
-                    <label for="nama" class="form-label">Nama</label>
-                    <input type="text" class="form-control" id="nama" name="nama" required>
-                </div>
-                <div class="col-12">
-                    <label for="jumlah" class="form-label">Jumlah</label>
-                    <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="3" value="1" required>
-                </div>
-                <div class="col-12">
-                    <label for="status" class="form-label">Konfirmasi</label>
-                    <select name="status" id="status" class="form-select" required>
-                        <option value="" selected disabled>Pilih salah satu</option>
-                        <option value="Hadir">Hadir</option>
-                        <option value="Tidak Hadir">Tidak Hadir</option>
-                    </select>
-                </div>
-                <div class="col-12 mt-4">
-                    <button class="btn btn-primary" type="submit">Kirim</button>
-                </div>
-            </form>
-        </div>
-    </section>
+<form class="row row-cols-md-auto g-3 align-items-center justify-content-center"
+  method="POST" 
+  action="https://script.google.com/macros/s/AKfycbzCqBSJghKaGXZUSs6gY8smr8hhwLFF8f3DR1Z3xmmLNmmmK79KKVnNNHic8lJxdtkwLg/exec" id="my-form">
+  <div class="col-12">
+    <div class="mb-3">
+  <label for="nama" class="form-label">Nama</label>
+  <input type="text" class="form-control" id="nama" name="nama">
+</div>
+  </div>
+   <div class="col-12">
+    <div class="mb-3">
+  <label for="jumlah" class="form-label">Jumlah</label>
+  <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="3" value="1">
+</div>
+  </div>
+   <div class="col-12">
+    <div class="mb-3">
+  <label for="status" class="form-label">Konfirmasi</label>
+  <select name="status" id="status" class="form-select">
+    <option selected>Pilih salah satu</option>
+    <option value="Hadir">Hadir</option>
+    <option value="Tidak Hadir"> Tidak Hadir</option>
+  </select>
+</div>
+  </div>
+  <div class="col-12" style="margin-top: 35px;">
+    <button class="btn btn-primary">Kirim</button>
+  </div>
+    </form>
+  </div>
+</section>
 
-    <footer class="footer">
-        <div class="container text-center">
-            <small>&copy; 2027 Wedding Invitation. All Rights Reserved.</small><br>
-            <small>Designed by <a href="https://www.instagram.com/rafsann_20/" target="_blank" rel="noopener">@rafsann_20</a></small>
-        </div>
-    </footer>
-</main>
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <small class="block">&copy; 2027 Wedding Invitation. All Rights Reserved.</small>
+        <small class="block"> Designed by <a href="https://www.instagram.com/rafsann_20/">@rafsann_20</a></small>
+      </div>
+    </div>
+  </div>
+</footer>
 
-<div id="audio-container" hidden>
-    <audio id="song" loop>
-        <source src="Audio/Baraka Allahu Lakuma.mp3" type="audio/mpeg">
-    </audio>
-    <button id="audioToggle" class="audio-toggle" type="button" aria-label="Putar musik">
-        <i id="audioIcon" class="bi bi-disc"></i>
-    </button>
+<div id="audio-container">
+  <audio id="song">
+    <source src="Audio/Baraka Allahu Lakuma.mp3" type="audio/mp3">
+  </audio>
+  <div class="audio-icon-wrapper" style="display: none;">
+    <i class="bi bi-disc"></i>
+  </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
 </html>
