@@ -1,7 +1,6 @@
 if ("scrollRestoration" in history) {
     history.scrollRestoration = "manual";
 }
-
 if (window.location.hash) {
     history.replaceState(
         null,
@@ -11,6 +10,7 @@ if (window.location.hash) {
 }
 
 const tanggalPernikahan = new Date("2027-06-06T08:00:00+07:00").getTime();
+
 function updateCountdown() {
     const sekarang = Date.now();
     const selisih = tanggalPernikahan - sekarang;
@@ -29,6 +29,19 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
+const hamburger = document.querySelector(".navbar-toggler");
+const stickyTop = document.querySelector(".sticky-top");
+const offcanvasNavbar = document.querySelector("#offcanvasNavbar");
+
+if (hamburger && stickyTop && offcanvasNavbar) {
+    hamburger.addEventListener("click", function () {
+        stickyTop.style.overflow = "visible";
+    });
+
+    offcanvasNavbar.addEventListener("hidden.bs.offcanvas", function () {
+        stickyTop.style.overflow = "";
+    });
+}
 const rootElement = document.querySelector(":root");
 const AudioIconWrapper = document.querySelector(".audio-icon-wrapper");
 const song = document.querySelector("#song");
@@ -37,7 +50,7 @@ const audioIcon = document.querySelector(".audio-icon-wrapper i");
 let isPlaying = false;
 
 function disableScroll() {
-    window.onscroll = function() {
+    window.onscroll = function () {
         window.scrollTo(0, 0);
     };
 
@@ -47,6 +60,10 @@ function disableScroll() {
 function enableScroll() {
     window.onscroll = null;
     rootElement.style.scrollBehavior = "smooth";
+    const navbar = document.querySelector(".mynavbar");
+    if (navbar) {
+        navbar.style.display = "flex";
+    }
     playAudio();
 }
 
@@ -63,7 +80,7 @@ function playAudio() {
     });
 }
 
-AudioIconWrapper.onclick = async function() {
+AudioIconWrapper.onclick = async function () {
     if (isPlaying) {
         song.pause();
         isPlaying = false;
@@ -80,19 +97,16 @@ AudioIconWrapper.onclick = async function() {
     }
 };
 
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
     window.scrollTo(0, 0);
     disableScroll();
 
     const form = document.getElementById("my-form");
-
     if (form) {
-        form.addEventListener("submit", function(e) {
+        form.addEventListener("submit", function (e) {
             e.preventDefault();
-
             const data = new FormData(form);
-            const action = e.target.action;
-
+            const action = form.action;
             fetch(action, {
                 method: "POST",
                 body: data
