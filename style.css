@@ -5,15 +5,19 @@
 }
 
 html {
+    width: 100%;
     font-size: 100%;
+    overflow-x: hidden;
 }
 
 body {
     width: 100%;
+    max-width: 100%;
     min-height: 100vh;
     margin: 0;
     font-size: 1.2rem;
     font-family: "Work Sans", sans-serif;
+    overflow-x: hidden;
 }
 
 .cover::before {
@@ -94,6 +98,8 @@ body {
 }
 
 .mynavbar {
+    width: 100%;
+    max-width: 100%;
     background-color: rgba(255, 255, 255, 0.3) !important;
     backdrop-filter: blur(4px);
 }
@@ -114,12 +120,16 @@ body {
 }
 
 .Home {
+    width: 100%;
+    max-width: 100%;
     background-image: url("img/bg-2.png");
     background-size: cover;
+    background-position: center;
     min-height: 100vh;
     margin-top: -6rem;
     padding-top: 15rem;
     padding-bottom: 5rem;
+    overflow-x: hidden;
 }
 
 .Home h2,
@@ -156,10 +166,13 @@ body {
 }
 
 .Info {
+    width: 100%;
+    max-width: 100%;
     background-color: var(--bg);
     color: white;
     padding-top: 10rem;
     padding-bottom: 8rem;
+    overflow-x: hidden;
 }
 
 .Info .alamat {
@@ -194,9 +207,12 @@ body {
 }
 
 .RsVp {
+    width: 100%;
+    max-width: 100%;
     background-color: var(--navy);
     padding-top: 10rem;
     padding-bottom: 8rem;
+    overflow-x: hidden;
 }
 
 .RsVp p {
@@ -258,14 +274,14 @@ body {
     line-height: 0;
 }
 
-/* Laptop */
+/* Media Query Laptop */
 @media (max-width: 991.98px) {
     html {
         font-size: 75%;
     }
 }
 
-/* Tablet */
+/* Media Query Tablet */
 @media (max-width: 767.98px) {
     html {
         font-size: 65%;
@@ -277,10 +293,26 @@ body {
     }
 }
 
-/* MHandphone */
+/* Media Query Handphone */
 @media (max-width: 575.98px) {
     html {
         font-size: 60%;
+    }
+
+    .Home {
+        margin-top: -6rem;
+        padding: 12rem 1.5rem 5rem;
+    }
+
+    .Home .couple {
+        margin-top: 50px;
+    }
+
+    .Home .couple img {
+        display: block;
+        width: 80%;
+        max-width: 250px;
+        margin: 0 auto;
     }
 
     .countdown {
@@ -304,7 +336,29 @@ body {
         font-size: 0.75rem;
     }
 
+    .mynavbar {
+        width: 100%;
+    }
+
+    .mynavbar .container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .mynavbar .navbar-brand {
+        font-size: 2.5rem;
+    }
+
+    .mynavbar .navbar-toggler {
+        margin-right: 0.5rem;
+    }
+
     .mynavbar .nav-link {
         text-align: center;
+    }
+
+    .audio-icon-wrapper {
+        right: 1rem;
+        bottom: 1rem;
     }
 }
