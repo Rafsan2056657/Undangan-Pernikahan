@@ -1,54 +1,65 @@
 :root {
     --navy: #4f8edc;
     --bg: #0f0f0f;
-    --shadow: 0 2px 2px rgb(0 0 0/ 0.5)
+    --shadow: 0 2px 2px rgb(0 0 0 / 50%);
 }
+
+* { box-sizing: border-box; }
 
 html {
     font-size: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
     width: 100%;
     min-height: 100vh;
     margin: 0;
-    font-size: 1.2rem;
-    font-family: "Work Sans", sans-serif;
+    font: 1.2rem "Work Sans", sans-serif;
+}
+
+body.locked { overflow: hidden; }
+
+[hidden] { display: none !important; }
+
+.cover {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 24px;
+    overflow: hidden;
 }
 
 .cover::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url("img/bg-wedding.jpg");
-    background-size: cover;
-    background-position: center ;
-    filter: grayscale();
+    background: url("img/bg-wedding.jpg") center/cover no-repeat;
+    filter: grayscale(100%);
     z-index: -1;
 }
 
-.cover {
-    position: relative;
-    min-height: 100vh;
-}
+.cover h1 { font: 6rem "Sacramento", cursive; }
 
 .cover h1, .cover h4, .cover p {
     text-shadow: var(--shadow);
 }
 
-.cover h1 {
-    font-family: "Sacramento", cursive;
-    font-size: 6rem;
+.cover h4 { font-size: 1.6rem; }
+.cover p { font-size: 1.4rem; }
+
+.cover .btn {
+    color: var(--navy);
+    background: white;
+    box-shadow: var(--shadow);
 }
 
-.cover h4 {
-    font-size: 1.6rem;
+.cover .btn:hover {
+    color: white;
+    background: var(--navy);
 }
-
-.cover p {
-    font-size: 1.4rem;
-}
-
 
 .countdown {
     display: flex;
@@ -57,6 +68,7 @@ body {
     flex-wrap: wrap;
     margin: 25px 0;
 }
+
 .countdown-item {
     min-width: 75px;
     padding: 12px 8px;
@@ -65,207 +77,160 @@ body {
     border-radius: 8px;
     color: var(--navy);
     text-align: center;
-    backdrop-filter: blur(4px);
 }
+
 .countdown-item span {
     display: block;
     font-size: 1.6rem;
     font-weight: 700;
-    line-height: 1.4;
 }
+
 .countdown-item small {
-    color: #fff;
+    color: white;
     font-size: 0.75rem;
 }
 
-.cover a {
-    color: var(--navy);
-    background-color: white;
-    box-shadow: var(--shadow);
-}
-.cover a:hover {
-    background-color: var(--navy);
-    color: white;
-}
-
 .mynavbar {
-    background-color: rgba(255, 255, 255, 0.3) !important;
+    background: rgba(255, 255, 255, 0.3) !important;
     backdrop-filter: blur(4px);
 }
-.mynavbar .offcanvas{
-    height: 100vh;
-}
-.mynavbar .navbar-brand, .mynavbar .offcanvas-title{
-    font-family: "Sacramento", cursive;
-    font-size: 3.2rem;
-    font-weight: bold;
+
+.mynavbar .navbar-brand,
+.mynavbar .offcanvas-title {
+    font: bold 3.2rem "Sacramento", cursive;
 }
 
-.mynavbar .nav-link {
-    text-transform: uppercase;
-}
+.mynavbar .nav-link { text-transform: uppercase; }
+.mynavbar .offcanvas { height: 100vh; height: 100dvh; }
 
 .Home {
-    background-image: url(img/bg-2.png);
-    background-size: cover;
+    background: url("img/bg-2.png") center/cover no-repeat;
     min-height: 100vh;
-    margin-top: -6rem;
-    padding-top: 15rem;
-    padding-bottom: 5rem;
+    padding: 9rem 0 5rem;
 }
+
 .Home h2, .Info h2 {
     color: var(--navy);
-    font-family: "Sacramento";
-    font-size: 5rem;
-    font-weight: bold;
+    font: bold 5rem "Sacramento", cursive;
 }
+
 .Home h3 {
     color: #444;
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
-.Home p {
-    color: #666;
-    font-size: 1.2rem;
-}
-.Home .couple {
-    margin-top: 100px;
 
-}
+.Home p { color: #666; }
+.Home .couple { margin-top: 100px; }
+
 .Home .couple h3 {
-    font-family: "Sacramento";
-    font-size: 2.4rem;
     color: var(--navy);
+    font: 2.4rem "Sacramento", cursive;
 }
+
 .Home .couple img {
     width: 100%;
+    height: auto;
 }
+
 .Info {
-    background-color: var(--bg);
+    padding: 10rem 0 8rem;
     color: white;
-    padding-top: 10rem;
-    padding-bottom: 8rem;
+    background: var(--bg);
 }
-.Info .alamat {
-    font-size: 1.1rem;
-}
-.Info .description {
-    font-size: 1.1rem;
-    font-weight: 300;
-}
+
+.Info .alamat, .Info .description { font-size: 1.1rem; }
+
 .Info .card {
-    background-color: rgba(255, 255, 255, 0.2) !important;
-    color: white !important;
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
     border: 1px solid #999;
 }
+
 .Info .card-header {
     border-bottom: 1px solid #999;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
 }
-.Info .card-body {
-    font-size: 1rem;
-}
+
+.Info .card-body { font-size: 1rem; }
+
 .Info .card-footer {
-    font-size: 0.9rem;
     border-top: 1px solid #999;
-    font-weight: 300;
+    font-size: 0.9rem;
 }
 
 .RsVp {
-    background-color: var(--navy);
-    padding-top: 10rem;
-    padding-bottom: 8rem;
-}
-.RsVp p {
-    color: white;
-    font-size: 1rem;
-    font-weight: 300;
+    padding: 10rem 0 8rem;
+    background: var(--navy);
 }
 
 .RsVp h2 {
     color: var(--bg);
-    font-family: "Sacramento";
-    font-size: 4rem;
-    font-weight: bold;
+    font: bold 4rem "Sacramento", cursive;
 }
-.RsVp form label {
-    color: white;
-}
+
+.RsVp p, .RsVp label { color: white; }
+
 .RsVp button {
-    background-color: var(--bg);
     color: var(--navy);
+    background: var(--bg);
     border: 1px solid var(--bg);
 }
+
 .RsVp button:hover {
-    background-color: white;
     color: var(--navy);
-    border: 1px solid white;
+    background: white;
+    border-color: white;
 }
+
 .footer {
     padding: 3rem;
-    background-color: var(--bg);
     color: var(--navy);
+    background: var(--bg);
+    text-align: center;
 }
-.footer a{
+
+.footer a {
     color: var(--navy);
     font-weight: bold;
     text-decoration: none;
 }
-.audio-icon-wrapper {
-    width: 4rem;
-    height: 4rem;
-    font-size: 4rem;
+
+.audio-toggle {
     position: fixed;
-    bottom: 2.5rem;
-    right: 2rem;
-    cursor: pointer;
+    right: 24px;
+    bottom: 24px;
+    z-index: 1040;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--navy);
+    border-radius: 50%;
+    background: var(--bg);
     color: white;
-    opacity: 0.5;
-    mix-blend-mode: difference;
-    animation: rotating 4s linear infinite;
-    transform-origin: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 0;
-}
-@keyframes rotating {
-    from{
-        transform: rotate(0);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-    
+    font-size: 1.8rem;
+    cursor: pointer;
 }
 
-/* Laptop */
 @media (max-width: 991.98px) {
-    html {
-        font-size: 75%;
-    }
+    html { font-size: 75%; }
 }
-/* Tablet */
+
 @media (max-width: 767.98px) {
-    html {
-        font-size: 65%;
-    }
+    html { font-size: 65%; }
 
     .mynavbar .nav-link {
         font-size: 2rem;
         text-align: center;
     }
 }
-/* Handphone */
-@media (max-width: 575.98px) {
-    html {
-        font-size: 60%;
-    }
 
+@media (max-width: 575.98px) {
+    html { font-size: 60%; }
+
+    .cover h1 { font-size: 4.5rem; }
     .countdown {
         gap: 7px;
-        margin: 18px 0;
         flex-wrap: nowrap;
     }
 
@@ -273,18 +238,18 @@ body {
         flex: 1;
         min-width: 0;
         padding: 10px 3px;
-        margin: 0;
     }
 
-    .countdown-item span {
-        font-size: 1.4rem;
-    }
+    .countdown-item span { font-size: 1.4rem; }
+    .mynavbar .navbar-brand { font-size: 2.8rem; }
 
-    .countdown-item small {
-        font-size: 0.75rem;
-    }
-
-    .mynavbar .nav-link {
-        text-align: center;
+    .Home { padding-top: 7rem; }
+    .Home h2, .Info h2 { font-size: 4rem; }
+    .Home .couple { margin-top: 45px; }
+    .Info, .RsVp { padding: 7rem 0 6rem; }
+    .footer { padding: 2rem 1rem; }
+    .audio-toggle {
+        right: 16px;
+        bottom: 16px;
     }
 }
