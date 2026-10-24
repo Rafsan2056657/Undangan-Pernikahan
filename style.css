@@ -122,7 +122,8 @@ body {
     padding-bottom: 5rem;
 }
 
-.Home h2, .Info h2 {
+.Home h2,
+.Info h2 {
     color: var(--navy);
     font-family: "Sacramento", cursive;
     font-size: 5rem;
@@ -276,11 +277,12 @@ body {
     }
 }
 
-/* Handphone */
+/* MHandphone */
 @media (max-width: 575.98px) {
     html {
         font-size: 60%;
     }
+
     .countdown {
         gap: 7px;
         margin: 18px 0;
