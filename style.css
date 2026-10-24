@@ -97,11 +97,12 @@ body {
 }
 
 .mynavbar {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 1030;
+    left: 0;
     width: 100%;
     max-width: 100%;
+    z-index: 1030;
     background-color: rgba(255, 255, 255, 0.3) !important;
     backdrop-filter: blur(4px);
 }
@@ -283,7 +284,7 @@ body {
     }
 }
 
-/*Tablet */
+/* Tablet */
 @media (max-width: 767.98px) {
     html {
         font-size: 65%;
@@ -317,8 +318,7 @@ body {
         padding: 12rem 1.5rem 5rem;
     }
 
-    .Home h2,
-    .Info h2 {
+    .Home h2, .Info h2 {
         font-size: 4rem;
     }
 
